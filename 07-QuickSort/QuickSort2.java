@@ -1,3 +1,5 @@
+// my partition algorithm works perfectly -- why isn't the sorting working and always returning that it's out of bounds? I'm so frustrated!
+
 public class QuickSort2 {
 
     public int partition( int[] a, int L, int R ) {
