@@ -1,4 +1,4 @@
-public class QuickSort2 {
+public class QuickSort2b {
 
     public int partition( int[] a, int L, int R ) {
 	int wall = 0; 
@@ -15,11 +15,19 @@ public class QuickSort2 {
 		wall++;
 	    }
 	}
-	int temp3 = a[R];
+	int pivot = a[R];
 	a[R] = a[wall];
-	a[wall] = temp3;
+	a[wall] = pivot;
 	//System.out.println(printArray(a));
-	return wall;
+	int wall2 = wall;
+	for ( int x = 0; x < R; x++ ) {
+	    if ( a[R] == pivot) {
+		a[wall2] = a[x];
+		a[x] = pivot;
+		wall2++;
+	    }
+	}
+	return (wall + wall2) / 2;
     }
 
     public void qSort( int[] A, int lo, int hi ) {
