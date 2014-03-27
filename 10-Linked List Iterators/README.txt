@@ -1,0 +1,3 @@
+I don't understand iterators because I didn't learn them last term! 
+I got most of the code not to throw back an error, but somehow, I can't create new instances of classes...
+And most of the time, when I fix one error, many more pop up :(
