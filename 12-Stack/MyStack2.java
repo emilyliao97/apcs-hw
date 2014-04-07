@@ -1,3 +1,5 @@
+import java.util.Scanner; 
+
 public class MyStack2 {
 
     private String[] stack;
@@ -7,7 +9,7 @@ public class MyStack2 {
     //constructor
     public MyStack2() {
 	stack = new String[10];
-	top = 0;
+	top = -1;
 	numElts = 0;
     }
 
@@ -19,9 +21,9 @@ public class MyStack2 {
 		tmp[i] = stack[i];
 	    stack = tmp;
 	}
-	    stack[top] = s;
-	    top++;
-	    numElts++;
+	top++;
+	stack[top] = s;
+	numElts++;
     }
 
     //pop
@@ -41,7 +43,7 @@ public class MyStack2 {
 
     //isEmpty
     public boolean isEmpty() {
-	return top == 0;
+	return top == -1;
     }
 
     public int getSize() {
@@ -52,9 +54,9 @@ public class MyStack2 {
     public String toString() {
 	String tmp = "";
 	int current = top;
-	while (current-1 != 0 ) {
-	    tmp += stack[current-1] + " ";
-	    current = current--;
+	while (current >= 0 ) {
+	    tmp += stack[current] + " ";
+	    current--;
 	}
 	return tmp;
     }
