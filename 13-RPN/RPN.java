@@ -61,34 +61,55 @@ public class RPN {
 	return tmp;
     }
 
-    public void hpcal() { 
-	Scanner one = new Scanner(System.in);
-	if (one.next().equals('+')) {
-	    double t1 = pop();
-	    double t2 = pop();
-	    double ans = t1 + t2;
+    public void hpcal(String one) { 
+	double t1;
+	double t2;
+	double ans;
+	if (one.equals("+")) {
+	    t1 = pop();
+	    t2 = pop();
+	    ans = t1 + t2;
 	    push(ans);
+	    System.out.println(ans);
 	}
-	else if (one.next().equals('-')) {
-	    double t1 = pop();
-	    double t2 = pop();
-	    double ans = t1 - t2;
+	else if (one.equals("-")) {
+	    t1 = pop();
+	    t2 = pop();
+	    ans = t1 - t2;
 	    push(ans);
+	    System.out.println(ans);
 	}
-	else if (one.next().equals('*')) {
-	    double t1 = pop();
-	    double t2 = pop();
-	    double ans = t1 * t2;
+	else if (one.equals("*")) {
+	    t1 = pop();
+	    t2 = pop();
+	    ans = t1 * t2;
 	    push(ans);
+	    System.out.println(ans);
 	}
-	else if (one.next().equals('/')) {
-	    double t1 = pop();
-	    double t2 = pop();
-	    double ans = t1 / t2;
+	else if (one.equals("/")) {
+	    t1 = pop();
+	    t2 = pop();
+	    ans = t1 / t2;
 	    push(ans);
+	    System.out.println(ans);
 	}
 	else {
-	    push(one.nextDouble());
+	    push(Double.parseDouble(one));
+	}
+    }
+
+    public static void main (String[] args) {
+	RPN hp = new RPN();
+	boolean go = true;
+	System.out.println("Welcome to your calculator.");
+	System.out.println("To exit, please type 'Stop'.");
+	while (go == true) {
+	    Scanner a = new Scanner(System.in);
+	    String input = a.next();
+	    if ( input.equals("Stop") )
+		 go = false;
+	    else
+		hp.hpcal(input);
 	}
     }
 
