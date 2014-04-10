@@ -31,6 +31,9 @@ public class MyQueue {
 	s = head.getData();
 	head = head.getNext();
 	len--;
+	if (head == null) {
+	    tail == null;
+	}
 	return s;
     }
 
