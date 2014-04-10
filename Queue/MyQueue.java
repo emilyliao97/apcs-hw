@@ -32,7 +32,7 @@ public class MyQueue {
 	head = head.getNext();
 	len--;
 	if (head == null) {
-	    tail == null;
+	    tail = null;
 	}
 	return s;
     }
