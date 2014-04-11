@@ -20,9 +20,8 @@ public class MyQueue2 {
 
     public void enqueue(String s) {
 	if (isFull == false) {
-	    if (tail == 9) {
+	    if (tail == 9) 
 		tail = -1;
-	    }
 	    tail++;
 	    queue[tail] = s;
 	}
@@ -30,6 +29,11 @@ public class MyQueue2 {
 
     public String dequeue() {
 	String tmp = queue[head];
+	queue[head] = null;
+	if (head == 9) 
+	    head = -1;
+	head++;
+	return tmp;
     }
 
 }
