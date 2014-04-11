@@ -14,9 +14,18 @@ public class MyQueue2 {
 	len = 0;
     }
 
+    public boolean isFull() {
+	return tail == head-1;
+    }
+
     public void enqueue(String s) {
-	tail++;
-	queue[tail] = s;
+	if (isFull == false) {
+	    if (tail == 9) {
+		tail = -1;
+	    }
+	    tail++;
+	    queue[tail] = s;
+	}
     }
 
     public String dequeue() {
