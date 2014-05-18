@@ -10,6 +10,11 @@ Instances of HashMaps, which implement the Map interface, have an initial capaci
 
 Instance of TreeMaps also implement the map interface and orders all the inputted values. it can take a comparator to sort these values, but can also use the natureal ordering of its keys. To insert and delete from a TreeMap requires for the shifting and re-balancing of the Tree to maintain its order.
 
-4. Heaps in java
+4. HashMap vs TreeMap: the Speed Test
+- inserting into the HashMap is faster than inserting into a TreeMap (probably because the TreeMap needs to sort the data)
+- the same results hold true for deleting
+- both clear at the same speeds
+
+5. Heaps in java
 
 The built-in Heap data structure in java is the PriorityQueue
